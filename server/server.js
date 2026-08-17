@@ -34,6 +34,16 @@ const app = express();
 // Security Middlewares
 app.use(
   helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["'self'", 'data:', 'https:', 'blob:', 'http:'],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
+        fontSrc: ["'self'", 'https:', 'data:'],
+        connectSrc: ["'self'", 'https:', 'wss:', 'http:'],
+      },
+    },
     crossOriginResourcePolicy: { policy: 'cross-origin' },
   })
 );
