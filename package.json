@@ -5,12 +5,12 @@
   "main": "server/server.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev",
-    "start": "cd server && npm start",
-    "build": "cd client && npm run build",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
-    "seed": "cd server && npm run seed"
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "start": "node server/server.js",
+    "build": "npm run build --prefix client",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server"
   },
   "keywords": [
     "portfolio",

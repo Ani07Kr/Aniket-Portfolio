@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: aniket-portfolio
+    env: node
+    plan: free
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: aniket07kr2000@gmail.com
+      - key: ADMIN_PASSWORD
+        value: admin@aniket2026
+      - key: GMAIL_USER
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: NOTIFICATION_EMAIL
+        sync: false
