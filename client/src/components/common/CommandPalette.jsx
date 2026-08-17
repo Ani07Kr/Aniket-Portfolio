@@ -23,6 +23,10 @@ export const CommandPalette = () => {
     setIsAiDrawerOpen,
     setActiveProjectModal,
     replayPreloader,
+    isMusicPlaying,
+    toggleMusic,
+    switchTrack,
+    currentTrackIndex,
     projects,
     skills,
     achievements,
@@ -44,6 +48,26 @@ export const CommandPalette = () => {
 
   // Build searchable items
   const baseActions = [
+    {
+      title: isMusicPlaying ? '⏸ Pause Soothing Background Music' : '▶ Play Soothing Background Music',
+      category: 'Music',
+      icon: Music,
+      action: () => {
+        setIsCommandPaletteOpen(false);
+        toggleMusic();
+      },
+    },
+    {
+      title: currentTrackIndex === 0
+        ? '☕ Switch to Track 2: Lo-Fi Deep Focus Chill'
+        : '🎹 Switch to Track 1: Ambient Piano Nocturne',
+      category: 'Music',
+      icon: Sparkles,
+      action: () => {
+        setIsCommandPaletteOpen(false);
+        switchTrack(currentTrackIndex === 0 ? 1 : 0);
+      },
+    },
     {
       title: '🎵 Replay Piano Intro Splash Symphony',
       category: 'Action',

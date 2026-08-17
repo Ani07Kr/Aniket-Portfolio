@@ -27,6 +27,8 @@ export const Navbar = () => {
     setIsAdminLoginOpen,
     isAdminLoggedIn,
     replayPreloader,
+    isMusicPlaying,
+    toggleMusic,
   } = usePortfolio();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,14 +146,32 @@ export const Navbar = () => {
             <span>K</span>
           </button>
 
-          {/* Replay Symphony Preloader Button */}
+          {/* Background Music Play/Stop Control Button */}
           <button
-            onClick={replayPreloader}
-            className="hidden sm:inline-flex items-center justify-center h-8.5 sm:h-9 w-8.5 sm:w-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-cyan-400 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 transition-colors shrink-0"
-            title="Replay Piano Symphony Splash Screen"
-            aria-label="Replay Piano Splash Screen"
+            onClick={toggleMusic}
+            className={`hidden sm:inline-flex items-center justify-center gap-1.5 h-8.5 sm:h-9 px-2.5 rounded-xl border transition-all shrink-0 ${
+              isMusicPlaying
+                ? 'bg-indigo-600/20 text-cyan-300 border-cyan-400/40 shadow-[0_0_12px_rgba(6,182,212,0.25)]'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 border-slate-200/80 dark:border-slate-700/80'
+            }`}
+            title={isMusicPlaying ? 'Stop / Pause Background Music' : 'Play Soothing Background Music'}
+            aria-label="Toggle background music"
           >
-            <Music className="w-4 h-4" />
+            {isMusicPlaying ? (
+              <>
+                <div className="flex items-end gap-0.5 h-3">
+                  <span className="w-0.5 h-full bg-cyan-400 animate-[bounce_0.6s_infinite_ease-in-out]" />
+                  <span className="w-0.5 h-2/3 bg-indigo-400 animate-[bounce_0.8s_infinite_ease-in-out_0.2s]" />
+                  <span className="w-0.5 h-4/5 bg-purple-400 animate-[bounce_0.5s_infinite_ease-in-out_0.1s]" />
+                </div>
+                <span className="text-[11px] font-mono font-bold text-cyan-300">Music ON</span>
+              </>
+            ) : (
+              <>
+                <Music className="w-3.5 h-3.5" />
+                <span className="text-[11px] font-mono text-slate-400">Play</span>
+              </>
+            )}
           </button>
 
           {/* Dark/Light Mode Toggle */}

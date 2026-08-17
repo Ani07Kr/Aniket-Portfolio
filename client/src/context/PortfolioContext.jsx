@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { api } from '../services/api';
+import { ambientMusicEngine, TRACKS } from '../services/ambientMusicEngine';
 
 const PortfolioContext = createContext();
 
@@ -19,6 +20,12 @@ export const PortfolioProvider = ({ children }) => {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => {
     return !!localStorage.getItem('aniket_admin_token');
   });
+
+  // Background Music State
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [musicVolume, setMusicVolumeState] = useState(0.55);
+  const [showMusicNotification, setShowMusicNotification] = useState(false);
 
   // Data states
   const [profile, setProfile] = useState(null);
@@ -100,9 +107,53 @@ export const PortfolioProvider = ({ children }) => {
     setIsAdminLoggedIn(false);
   };
 
-  const replayPreloader = () => {
+  // Background Music Functions
+  const startMusic = useCallback((trackIdx = currentTrackIndex) => {
+    ambientMusicEngine.start(trackIdx);
+    setIsMusicPlaying(true);
+  }, [currentTrackIndex]);
+
+  const stopMusic = useCallback(() => {
+    ambientMusicEngine.stop();
+    setIsMusicPlaying(false);
+  }, []);
+
+  const toggleMusic = useCallback(() => {
+    if (isMusicPlaying) {
+      stopMusic();
+    } else {
+      startMusic(currentTrackIndex);
+    }
+  }, [isMusicPlaying, startMusic, stopMusic, currentTrackIndex]);
+
+  const switchTrack = useCallback((newIdx) => {
+    const validIdx = newIdx % TRACKS.length;
+    setCurrentTrackIndex(validIdx);
+    ambientMusicEngine.switchTrack(validIdx);
+    setIsMusicPlaying(true);
+  }, []);
+
+  const setMusicVolume = useCallback((vol) => {
+    setMusicVolumeState(vol);
+    ambientMusicEngine.setVolume(vol);
+  }, []);
+
+  // Called when Preloader finishes and exits
+  const handlePreloaderComplete = useCallback(() => {
+    setShowPreloader(false);
+
+    // Auto-start ambient background music after preloader exit
+    setTimeout(() => {
+      startMusic(0);
+      setShowMusicNotification(true);
+    }, 400);
+  }, [startMusic]);
+
+  // Replay Preloader
+  const replayPreloader = useCallback(() => {
+    stopMusic(); // Pause ambient music while preloader symphony runs
     setShowPreloader(true);
-  };
+  }, [stopMusic]);
 
   return (
     <PortfolioContext.Provider
@@ -132,7 +183,18 @@ export const PortfolioProvider = ({ children }) => {
         loading,
         showPreloader,
         setShowPreloader,
+        handlePreloaderComplete,
         replayPreloader,
+        isMusicPlaying,
+        currentTrackIndex,
+        musicVolume,
+        startMusic,
+        stopMusic,
+        toggleMusic,
+        switchTrack,
+        setMusicVolume,
+        showMusicNotification,
+        setShowMusicNotification,
         refreshData: fetchData,
       }}
     >
