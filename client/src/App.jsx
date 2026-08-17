@@ -66,21 +66,21 @@ export function App() {
       <AiAssistantDrawer />
 
       {/* Floating Action Button (Mobile & Desktop AI / Recruiter Trigger) */}
-      <div className="fixed bottom-6 right-6 z-30 flex flex-col gap-2.5">
+      <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-30 flex flex-col gap-2 pointer-events-auto">
         <button
           onClick={() => setIsRecruiterModalOpen(true)}
-          className="p-3.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-xl shadow-amber-500/25 hover:scale-110 transition-transform flex items-center justify-center"
+          className="p-2.5 sm:p-3.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/25 hover:scale-110 active:scale-95 transition-transform flex items-center justify-center touch-manipulation"
           title="Open Recruiter Mode (60s Summary)"
         >
-          <Zap className="w-5 h-5 fill-white" />
+          <Zap className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
         </button>
 
         <button
           onClick={() => setIsAiDrawerOpen(true)}
-          className="p-3.5 rounded-full bg-gradient-to-r from-brand-600 to-indigo-600 text-white shadow-xl shadow-indigo-500/30 hover:scale-110 transition-transform flex items-center justify-center"
+          className="p-2.5 sm:p-3.5 rounded-full bg-gradient-to-r from-brand-600 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:scale-110 active:scale-95 transition-transform flex items-center justify-center touch-manipulation"
           title="Chat with Aniket AI"
         >
-          <Bot className="w-5 h-5" />
+          <Bot className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       </div>
     </div>
