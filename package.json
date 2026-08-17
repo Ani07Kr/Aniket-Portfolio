@@ -5,12 +5,12 @@
   "main": "server/server.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "npm run dev --prefix server",
-    "client": "npm run dev --prefix client",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
     "start": "node server/server.js",
-    "build": "npm run build --prefix client",
-    "install:all": "npm install --include=dev && npm install --prefix server && npm install --prefix client --include=dev",
-    "seed": "npm run seed --prefix server"
+    "build": "cd client && npm install --include=dev && npx vite build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install --include=dev",
+    "seed": "node server/config/seed.js"
   },
   "keywords": [
     "portfolio",
@@ -24,7 +24,8 @@
   ],
   "author": "Aniket Kumar <aniket07kr2000@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^5.3.1"
   }
 }

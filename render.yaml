@@ -3,7 +3,7 @@ services:
     name: aniket-portfolio
     env: node
     plan: free
-    buildCommand: npm run install:all && npm run build
+    buildCommand: cd server && npm install && cd ../client && npm install --include=dev && npx vite build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
