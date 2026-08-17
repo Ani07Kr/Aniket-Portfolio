@@ -45,8 +45,8 @@ export const Footer = () => {
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                   Aniket Kumar
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-                  USN: 1NH23MC016 • NHCE Bangalore
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  MCA • Full-Stack & AI Engineer
                 </p>
               </div>
             </div>
