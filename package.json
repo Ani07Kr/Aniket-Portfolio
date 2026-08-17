@@ -9,7 +9,7 @@
     "client": "npm run dev --prefix client",
     "start": "node server/server.js",
     "build": "npm run build --prefix client",
-    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "install:all": "npm install --include=dev && npm install --prefix server && npm install --prefix client --include=dev",
     "seed": "npm run seed --prefix server"
   },
   "keywords": [
