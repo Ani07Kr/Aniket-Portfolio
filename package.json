@@ -1,0 +1,30 @@
+{
+  "name": "aniket-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Production-grade Full-Stack Developer Portfolio for Aniket Kumar",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "framer-motion",
+    "tailwind"
+  ],
+  "author": "Aniket Kumar <aniket07kr2000@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
