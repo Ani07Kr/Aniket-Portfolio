@@ -16,9 +16,12 @@ const connectDB = async () => {
       return conn;
     }
 
-    // Resilient In-Memory MongoDB Fallback for zero-friction 100% free local execution
+    // Resilient In-Memory MongoDB Fallback for zero-friction 100% free local & cloud execution
     console.log('⚡ Initializing Resilient Embedded MongoDB Instance (100% Free & Zero-Setup)...');
     mongoMemoryServer = await MongoMemoryServer.create({
+      binary: {
+        version: '7.0.14',
+      },
       instance: {
         dbName: 'aniket_portfolio_db',
       },
@@ -32,8 +35,11 @@ const connectDB = async () => {
     console.error(`❌ MongoDB Connection Error: ${error.message}`);
     // If standard URI failed, try fallback
     try {
-      console.log('⚠️ Attempting fallback to Embedded In-Memory MongoDB...');
+      console.log('⚠️ Attempting fallback to Embedded In-Memory MongoDB (7.0.14)...');
       mongoMemoryServer = await MongoMemoryServer.create({
+        binary: {
+          version: '7.0.14',
+        },
         instance: { dbName: 'aniket_portfolio_db' },
       });
       const uri = mongoMemoryServer.getUri();
