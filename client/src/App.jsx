@@ -1,5 +1,7 @@
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { usePortfolio } from './context/PortfolioContext';
+import { Preloader } from './components/common/Preloader';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { CommandPalette } from './components/common/CommandPalette';
@@ -21,10 +23,16 @@ import { AdminDashboard } from './components/admin/AdminDashboard';
 import { Bot, Zap } from 'lucide-react';
 
 export function App() {
-  const { setIsAiDrawerOpen, setIsRecruiterModalOpen } = usePortfolio();
+  const { showPreloader, setShowPreloader, setIsAiDrawerOpen, setIsRecruiterModalOpen } = usePortfolio();
 
   return (
     <div className="relative min-h-screen bg-slate-50 text-slate-900 dark:bg-[#080B14] dark:text-slate-100 selection:bg-brand-500 selection:text-white transition-colors duration-300 font-sans">
+      {/* Piano Music Programming Languages Preloader Splash Screen */}
+      <AnimatePresence mode="wait">
+        {showPreloader && (
+          <Preloader onComplete={() => setShowPreloader(false)} />
+        )}
+      </AnimatePresence>
       {/* Navigation */}
       <Navbar />
 

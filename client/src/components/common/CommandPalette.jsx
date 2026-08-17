@@ -12,6 +12,7 @@ import {
   Mail,
   ArrowRight,
   Sparkles,
+  Music,
 } from 'lucide-react';
 
 export const CommandPalette = () => {
@@ -21,6 +22,7 @@ export const CommandPalette = () => {
     setIsRecruiterModalOpen,
     setIsAiDrawerOpen,
     setActiveProjectModal,
+    replayPreloader,
     projects,
     skills,
     achievements,
@@ -42,6 +44,15 @@ export const CommandPalette = () => {
 
   // Build searchable items
   const baseActions = [
+    {
+      title: '🎵 Replay Piano Intro Splash Symphony',
+      category: 'Action',
+      icon: Music,
+      action: () => {
+        setIsCommandPaletteOpen(false);
+        replayPreloader();
+      },
+    },
     {
       title: '⚡ Open 60-Second Recruiter Summary',
       category: 'Action',

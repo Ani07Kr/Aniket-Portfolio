@@ -10,10 +10,11 @@ import {
   Sparkles,
   Lock,
   Heart,
+  Music,
 } from 'lucide-react';
 
 export const Footer = () => {
-  const { profile, setIsAdminLoginOpen, isAdminLoggedIn, logoutAdmin } = usePortfolio();
+  const { profile, setIsAdminLoginOpen, isAdminLoggedIn, logoutAdmin, replayPreloader } = usePortfolio();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -167,6 +168,16 @@ export const Footer = () => {
           </p>
 
           <div className="flex items-center gap-4">
+            {/* Replay Intro Symphony Button */}
+            <button
+              onClick={replayPreloader}
+              className="hover:text-brand-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1 text-slate-500 hover:scale-105"
+              title="Replay Piano Symphony Splash"
+            >
+              <Music className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Replay Intro</span>
+            </button>
+
             {/* Admin Login / Logout */}
             {isAdminLoggedIn ? (
               <button

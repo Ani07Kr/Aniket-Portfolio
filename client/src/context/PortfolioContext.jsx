@@ -29,6 +29,7 @@ export const PortfolioProvider = ({ children }) => {
   const [achievements, setAchievements] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(true);
 
   // Sync theme
   useEffect(() => {
@@ -99,6 +100,10 @@ export const PortfolioProvider = ({ children }) => {
     setIsAdminLoggedIn(false);
   };
 
+  const replayPreloader = () => {
+    setShowPreloader(true);
+  };
+
   return (
     <PortfolioContext.Provider
       value={{
@@ -125,6 +130,9 @@ export const PortfolioProvider = ({ children }) => {
         achievements,
         blogs,
         loading,
+        showPreloader,
+        setShowPreloader,
+        replayPreloader,
         refreshData: fetchData,
       }}
     >

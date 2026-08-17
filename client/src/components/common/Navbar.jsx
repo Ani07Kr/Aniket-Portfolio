@@ -14,6 +14,7 @@ import {
   Award,
   Sparkles,
   Lock,
+  Music,
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -25,6 +26,7 @@ export const Navbar = () => {
     setIsAiDrawerOpen,
     setIsAdminLoginOpen,
     isAdminLoggedIn,
+    replayPreloader,
   } = usePortfolio();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -140,6 +142,16 @@ export const Navbar = () => {
           >
             <Command className="w-3.5 h-3.5 shrink-0" />
             <span>K</span>
+          </button>
+
+          {/* Replay Symphony Preloader Button */}
+          <button
+            onClick={replayPreloader}
+            className="hidden sm:inline-flex items-center justify-center h-8.5 sm:h-9 w-8.5 sm:w-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-cyan-400 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700/80 transition-colors shrink-0"
+            title="Replay Piano Symphony Splash Screen"
+            aria-label="Replay Piano Splash Screen"
+          >
+            <Music className="w-4 h-4" />
           </button>
 
           {/* Dark/Light Mode Toggle */}
