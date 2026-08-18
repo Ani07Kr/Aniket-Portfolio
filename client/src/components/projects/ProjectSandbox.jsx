@@ -621,7 +621,7 @@ export const ProjectSandbox = ({ project }) => {
 
           <div className="flex items-center gap-2">
             <a
-              href="https://expo.dev/accounts/ani07kr/projects/parchai/builds/d5f3e183-8441-4f4e-80b2-43beec072340"
+              href="https://expo.dev/accounts/ani07kr/projects/parchai/builds/6494f829-9e33-4e4a-93fb-0afed87a00e8"
               target="_blank"
               rel="noreferrer"
               className="px-3 py-1 rounded-xl bg-gradient-to-r from-cyan-500/20 to-brand-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/30 transition-all flex items-center gap-1.5"

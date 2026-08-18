@@ -280,7 +280,7 @@ const seedData = {
       ],
       links: {
         github: 'https://github.com/Ani07Kr',
-        live: 'https://expo.dev/accounts/ani07kr/projects/parchai/builds/d5f3e183-8441-4f4e-80b2-43beec072340',
+        live: 'https://expo.dev/accounts/ani07kr/projects/parchai/builds/6494f829-9e33-4e4a-93fb-0afed87a00e8',
         patent: '',
         paper: '',
         demoVideo: '',
