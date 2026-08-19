@@ -14,6 +14,7 @@ import {
   Terminal,
   Play,
   Briefcase,
+  Smartphone,
 } from 'lucide-react';
 
 export const ProjectModal = () => {
@@ -270,10 +271,22 @@ export const ProjectModal = () => {
                 href={p.links.live}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-md shadow-indigo-500/20"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-md shadow-indigo-500/20 transition-all"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>Live Deployment</span>
+                <span>Live Web App</span>
+              </a>
+            )}
+
+            {p.links?.apk && (
+              <a
+                href={p.links.apk}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-500/20 transition-all"
+              >
+                <Smartphone className="w-3.5 h-3.5" />
+                <span>Download APK (Expo EAS)</span>
               </a>
             )}
 

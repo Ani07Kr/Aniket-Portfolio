@@ -55,8 +55,8 @@ const answerWithLocalEngine = (query) => {
   if (q.includes('gita') || q.includes('holistic') || q.includes('wellness') || q.includes('major project')) {
     const p = seedData.projects[0];
     return {
-      text: `**${p.title}** (MCA Major Project 23MCA43 & Indian Patent Pub No. 26/2025)\n\n${p.description}\n\n**Key Technical Architecture:**\n• **Frontend**: React & React Native cross-platform app with real-time video capture.\n• **AI Diagnostics**: Tri-modal fusion of webcam Facial Emotion Recognition (FER), ECG biometric stress signal parsing (.csv/.pdf), and standardized psychological surveys.\n• **Backend & DB**: Node.js, Express.js, and Supabase (PostgreSQL) storing verse vectors and user sessions.\n• **Outcome**: Prescribes customized Sanskrit shlokas, English insights, and restorative audio affirmations.`,
-      sources: ['Major Project 23MCA43', 'Indian Patent 202541054232', 'TechCiti Internship'],
+      text: `**${p.title}** (MCA Major Project 23MCA43 & Indian Patent Pub No. 26/2025)\n\n${p.description}\n\n**Key Technical Architecture:**\n• **Frontend**: React & React Native cross-platform app with real-time video capture.\n• **AI Diagnostics**: Tri-modal fusion of webcam Facial Emotion Recognition (FER), ECG biometric stress signal parsing (.csv/.pdf), and standardized psychological surveys.\n• **Backend & DB**: Node.js, Express.js, and Supabase (PostgreSQL) storing verse vectors and user sessions.\n• **Outcome**: Prescribes customized Sanskrit shlokas, English insights, and restorative audio affirmations.\n\n🌐 **Live Web App**: [Open Live Deployment](https://bhagavadgitawellnessapp.onrender.com)\n📲 **Production Android Build (Expo)**: [Download Android APK](https://expo.dev/accounts/ani07kr/projects/bhagavadgita-wellness/builds/a99d63c8-14cb-47e9-a957-61df993cce51)`,
+      sources: ['Major Project 23MCA43', 'Indian Patent 202541054232', 'TechCiti Internship', 'Render Deployment', 'Expo EAS Build'],
       suggestedQuestions: [
         'Can I try the Gita wellness simulator?',
         'What technologies does Aniket know best?',

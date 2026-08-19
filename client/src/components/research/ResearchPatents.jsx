@@ -12,6 +12,7 @@ import {
   Sparkles,
   BarChart3,
   BrainCircuit,
+  Smartphone,
 } from 'lucide-react';
 
 export const ResearchPatents = () => {
@@ -57,7 +58,25 @@ export const ResearchPatents = () => {
               </p>
             </div>
 
-            <div className="shrink-0 flex items-center gap-2">
+            <div className="shrink-0 flex flex-wrap items-center gap-2">
+              <a
+                href="https://bhagavadgitawellnessapp.onrender.com"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm shadow-indigo-500/20"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Live App</span>
+              </a>
+              <a
+                href="https://expo.dev/accounts/ani07kr/projects/bhagavadgita-wellness/builds/a99d63c8-14cb-47e9-a957-61df993cce51"
+                target="_blank"
+                rel="noreferrer"
+                className="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm shadow-emerald-500/20"
+              >
+                <Smartphone className="w-3.5 h-3.5" />
+                <span>Download APK</span>
+              </a>
               <span className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-amber-500" />
                 <span>27 June 2025</span>

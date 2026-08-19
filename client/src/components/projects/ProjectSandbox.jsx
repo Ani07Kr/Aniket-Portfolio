@@ -17,6 +17,8 @@ import {
   Calendar,
   Clock,
   Bell,
+  ExternalLink,
+  Smartphone,
 } from 'lucide-react';
 
 export const ProjectSandbox = ({ project }) => {
@@ -88,14 +90,38 @@ export const ProjectSandbox = ({ project }) => {
 
     return (
       <div className="space-y-6 p-4 sm:p-6 rounded-2xl bg-slate-900/90 text-white border border-slate-800">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div className="flex flex-wrap items-center justify-between border-b border-slate-800 pb-3 gap-2">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="font-bold text-sm">Gita AI Wellness Simulator</span>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-sm">Gita AI Wellness Simulator</span>
+              <span className="text-[11px] font-mono text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+                Tri-Modal Fusion
+              </span>
+            </div>
           </div>
-          <span className="text-xs font-mono text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
-            Tri-Modal Fusion
-          </span>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <a
+              href="https://bhagavadgitawellnessapp.onrender.com"
+              target="_blank"
+              rel="noreferrer"
+              className="px-3 py-1 rounded-xl bg-gradient-to-r from-indigo-500/20 to-brand-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold hover:bg-indigo-500/30 transition-all flex items-center gap-1.5"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Live Web App</span>
+            </a>
+            <a
+              href="https://expo.dev/accounts/ani07kr/projects/bhagavadgita-wellness/builds/a99d63c8-14cb-47e9-a957-61df993cce51"
+              target="_blank"
+              rel="noreferrer"
+              className="px-3 py-1 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold hover:bg-emerald-500/30 transition-all flex items-center gap-1.5"
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>Download APK</span>
+              <span className="text-[10px] font-mono bg-emerald-500/30 px-1.5 py-0.5 rounded">Expo EAS</span>
+            </a>
+          </div>
         </div>
 
         {/* Input selectors */}

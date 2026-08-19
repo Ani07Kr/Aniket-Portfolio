@@ -15,7 +15,7 @@ Featuring patented AI innovations, IEEE peer-reviewed research, verified full-st
   - *Sleep Stage Classification: Combining KNN, Decision Tree, and Regression for Enhanced Performance* (97% Accuracy)
 - 📱 **8 Verified Engineering Projects**:
   - **Parchai**: Personal AI Companion & Life-Management Mobile App (*React Native, Expo EAS APK, TypeScript, Supabase, Render, OpenRouter*)
-  - **Bhagavad Gita AI**: Holistic Tri-Modal Wellness Recommendation Platform (*React, React Native, Supabase, OpenCV, ECG signal analysis*)
+  - **Bhagavad Gita AI**: Holistic Tri-Modal Wellness Recommendation Platform (*React, React Native, Supabase, OpenCV, ECG signal analysis* • [Live Web App](https://bhagavadgitawellnessapp.onrender.com) • [Android APK](https://expo.dev/accounts/ani07kr/projects/bhagavadgita-wellness/builds/a99d63c8-14cb-47e9-a957-61df993cce51))
   - **MINDPLAY AI**: Affective Tutoring System (*CNN Emotion Tracking, Python, React.js*)
   - **Semantic NLP LLM Seminars**: Transformer pipelines (*BART Large CNN & MNLI Zero-Shot Classification*)
   - **Sleep Stage Classification**: EEG Biomedical ML pipeline (*Scikit-Learn, Signal Processing, Hypnograms*)

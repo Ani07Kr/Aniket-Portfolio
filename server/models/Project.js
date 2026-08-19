@@ -53,6 +53,7 @@ const projectSchema = new mongoose.Schema(
     links: {
       github: { type: String, default: '' },
       live: { type: String, default: '' },
+      apk: { type: String, default: '' },
       patent: { type: String, default: '' },
       paper: { type: String, default: '' },
       demoVideo: { type: String, default: '' },

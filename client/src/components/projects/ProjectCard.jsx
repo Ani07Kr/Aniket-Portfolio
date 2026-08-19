@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Play,
   Layers,
+  Smartphone,
 } from 'lucide-react';
 
 export const ProjectCard = ({ project }) => {
@@ -130,12 +131,39 @@ export const ProjectCard = ({ project }) => {
             </button>
           )}
 
+          {project.links?.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-brand-600 dark:text-cyan-400 hover:bg-brand-600 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-slate-950 transition-all border border-indigo-200/50 dark:border-indigo-800/50 shadow-sm"
+              title="Open Live Web Application"
+              aria-label="Live Web Application"
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
+
+          {project.links?.apk && (
+            <a
+              href={project.links.apk}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all border border-emerald-200/50 dark:border-emerald-800/50 shadow-sm"
+              title="Download Android APK (Expo EAS Build)"
+              aria-label="Download Android APK"
+            >
+              <Smartphone className="w-4 h-4" />
+            </a>
+          )}
+
           {project.links?.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noreferrer"
               className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              title="GitHub Repository"
               aria-label="GitHub Repository"
             >
               <Github className="w-4 h-4" />

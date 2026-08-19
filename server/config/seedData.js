@@ -111,7 +111,8 @@ const seedData = {
       ],
       links: {
         github: 'https://github.com/Ani07Kr',
-        live: '',
+        live: 'https://bhagavadgitawellnessapp.onrender.com',
+        apk: 'https://expo.dev/accounts/ani07kr/projects/bhagavadgita-wellness/builds/a99d63c8-14cb-47e9-a957-61df993cce51',
         patent: 'Indian Patent Publication No. 26/2025 (App No. 202541054232)',
         paper: '',
         demoVideo: '',
@@ -281,6 +282,7 @@ const seedData = {
       links: {
         github: 'https://github.com/Ani07Kr',
         live: 'https://expo.dev/accounts/ani07kr/projects/parchai/builds/6494f829-9e33-4e4a-93fb-0afed87a00e8',
+        apk: 'https://expo.dev/accounts/ani07kr/projects/parchai/builds/6494f829-9e33-4e4a-93fb-0afed87a00e8',
         patent: '',
         paper: '',
         demoVideo: '',
