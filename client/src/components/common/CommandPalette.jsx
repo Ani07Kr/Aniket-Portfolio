@@ -98,6 +98,14 @@ export const CommandPalette = () => {
       },
     },
     {
+      title: '⚡ Launch Live Simulators & Deployment Hub',
+      category: 'Action',
+      icon: Zap,
+      action: () => {
+        window.location.hash = '#simulators';
+      },
+    },
+    {
       title: '💼 Check Job Description Match Score',
       category: 'Action',
       icon: Cpu,

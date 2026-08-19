@@ -45,6 +45,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Patents', href: '#research' },
+    { name: 'Simulators', href: '#simulators' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },

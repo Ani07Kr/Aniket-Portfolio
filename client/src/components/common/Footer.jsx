@@ -110,8 +110,13 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="#simulators" className="hover:text-brand-600 dark:hover:text-cyan-400 transition-colors">
+                  Live Simulators & Deployments
+                </a>
+              </li>
+              <li>
                 <a href="#projects" className="hover:text-brand-600 dark:hover:text-cyan-400 transition-colors">
-                  Featured Projects & Sandboxes
+                  Featured Projects & Code
                 </a>
               </li>
               <li>

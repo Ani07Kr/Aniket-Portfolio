@@ -11,6 +11,7 @@ import { AdminLoginModal } from './components/common/AdminLoginModal';
 import { Hero } from './components/hero/Hero';
 import { About } from './components/about/About';
 import { ResearchPatents } from './components/research/ResearchPatents';
+import { SimulatorsSection } from './components/simulators/SimulatorsSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
 import { SkillsMatrix } from './components/skills/SkillsMatrix';
 import { ExperienceTimeline } from './components/experience/ExperienceTimeline';
@@ -45,6 +46,7 @@ export function App() {
         <Hero />
         <About />
         <ResearchPatents />
+        <SimulatorsSection />
         <ProjectsSection />
         <SkillsMatrix />
         <ExperienceTimeline />
